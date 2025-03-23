@@ -22,7 +22,7 @@ def check_for_wipe_posts():
         title = title_elem.text.strip()
         
         url_elem = post.find("a", class_="search-title")
-        post_url = "https://old.reddit.com" + url_elem["href"]
+        post_url = url_elem["href"].replace("old.reddit.com", "www.reddit.com")  # Convert to regular Reddit
         
         time_elem = post.find("time")
         if not time_elem:
